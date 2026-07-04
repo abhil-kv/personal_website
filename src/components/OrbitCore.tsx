@@ -54,7 +54,7 @@ export default function OrbitCore() {
       >
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="hero-heading font-black text-[clamp(2rem,6vw,3.4rem)] tracking-tight">
-            AV
+            
           </span>
         </div>
       </motion.div>

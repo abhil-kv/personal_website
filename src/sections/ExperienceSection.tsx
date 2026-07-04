@@ -4,17 +4,17 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const roles = [
   {
     number: '01',
-    category: 'Oct 2023 — Present',
-    company: 'IBM India Software Labs',
-    title: 'Software Developer',
-    project: 'MultiCloud SaaS Platform (MCSP)',
+    category: 'Jun 2019 — Sep 2022',
+    company: 'KeyValue Software Systems Pvt. Ltd.',
+    title: 'Software Engineer',
+    project: 'Onboarding Tool, Pet Care Platform, Employee Mobile App',
     bullets: [
-      'Developed and maintained UI components for SOLIS-UI, a central hub for IBM SaaS products built on micro frontend architecture.',
-      'Integrated React.js with Docker, Kubernetes, and OpenShift to create scalable, containerized applications.',
-      'Improved UI performance and modularity by implementing optimized, reusable components.',
-      'Built and maintained RESTful APIs with Express.js and implemented an SSR-based dashboard for improved performance and SEO.',
+      'Developed a Progressive Web App for a Singapore-based client combining ecommerce and healthcare domains.',
+      'Delivered React-based OMS/WMS/CMS components integrated with Shopify for a pet ecommerce platform.',
+      'Built and maintained React Native mobile applications for financial institutions to securely manage customer data.',
+      'Contributed to Shopify-based websites using Liquid and jQuery.',
     ],
-    tags: ['React.js', 'Node.js', 'Docker', 'Kubernetes', 'OpenShift', 'Express.js'],
+    tags: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL'],
   },
   {
     number: '02',
@@ -27,21 +27,22 @@ const roles = [
       "Designed and implemented an admin dashboard with responsive design, integrated with the client's SSO-enabled framework.",
       'Leveraged micro frontend architecture with Webpack Module Federation for modular app integration.',
     ],
-    tags: ['React.js', 'Module Federation', 'SSO', 'Responsive UI'],
+    tags: ['JavaScript', 'TypeScript', 'Webpack', 'Node.js'],
   },
-  {
+
+    {
     number: '03',
-    category: 'Jun 2019 — Sep 2022',
-    company: 'KeyValue Software Systems Pvt. Ltd.',
-    title: 'Software Engineer',
-    project: 'Onboarding Tool, Pet Care Platform, Employee Mobile App',
+    category: 'Oct 2023 — Present',
+    company: 'IBM India Software Labs',
+    title: 'Software Developer',
+    project: 'MultiCloud SaaS Platform (MCSP)',
     bullets: [
-      'Developed a Progressive Web App for a Singapore-based client combining ecommerce and healthcare domains.',
-      'Delivered React-based OMS/WMS/CMS components integrated with Shopify for a pet ecommerce platform.',
-      'Built and maintained React Native mobile applications for financial institutions to securely manage customer data.',
-      'Contributed to Shopify-based websites using Liquid and jQuery.',
+      'Developed and maintained UI components for SOLIS-UI, a central hub for IBM SaaS products built on micro frontend architecture.',
+      'Integrated React.js with Docker, Kubernetes, and OpenShift to create scalable, containerized applications.',
+      'Improved UI performance and modularity by implementing optimized, reusable components.',
+      'Built and maintained RESTful APIs with Express.js and implemented an SSR-based dashboard for improved performance and SEO.',
     ],
-    tags: ['React Native', 'PWA', 'Shopify', 'jQuery'],
+    tags: ['JavaScript', 'TypeScript', 'Go', 'MongoDB', 'PostgreSQL', 'Micro Frontend'],
   },
 ];
 

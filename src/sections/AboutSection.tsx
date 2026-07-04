@@ -1,10 +1,11 @@
 import { Boxes, Cloud, Code2, GitBranch } from 'lucide-react';
+import { motion } from 'framer-motion';
 import FadeIn from '../components/FadeIn';
 import AnimatedText from '../components/AnimatedText';
 import ContactButton from '../components/ContactButton';
 
 const summary =
-  "With over seven years of experience across react.js, next.js, node.js, and go, i focus on scalable micro frontend architecture and high-performance web applications. i truly enjoy working with cross-functional teams that aim to ship clean, reliable software. let's build something incredible together!";
+  "With over seven years of experience across react.js, next.js, node.js, and go, i focus on scalable micro frontend architecture and high-performance web & mobile applications. i truly enjoy working with cross-functional teams that aim to ship clean, reliable software. let's build something incredible together!";
 
 function Corner({
   Icon,
@@ -37,19 +38,36 @@ export default function AboutSection() {
       <Corner Icon={Cloud} className="top-[4%] right-[1%] sm:right-[2%] md:right-[4%]" delay={0.15} x={80} />
       <Corner Icon={GitBranch} className="bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%]" delay={0.3} x={80} />
 
-      <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16">
-        <FadeIn delay={0} y={40}>
-          <h2
-            className="hero-heading text-center font-black uppercase leading-none tracking-tight"
-            style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
-          >
-            About me
-          </h2>
-        </FadeIn>
+      <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16" style={{ perspective: '1000px' }}>
+        <motion.h2
+          className="hero-heading text-center font-black uppercase leading-none tracking-tight"
+          style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
+          initial={{
+            y: -200,
+            rotateX: -90,
+            opacity: 0,
+            scale: 0.5
+          }}
+          whileInView={{
+            y: 0,
+            rotateX: 0,
+            opacity: 1,
+            scale: 1
+          }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 1.2,
+            ease: [0.34, 1.56, 0.64, 1], // Bounce easing
+            opacity: { duration: 0.8 },
+            scale: { duration: 1, ease: 'easeOut' }
+          }}
+        >
+          About me
+        </motion.h2>
 
         <AnimatedText
           text={summary}
-          className="max-w-[560px] text-center font-medium leading-relaxed text-[#D7E2EA]"
+          className="max-w-[32rem] text-center font-medium leading-relaxed text-[#D7E2EA]"
           style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
         />
       </div>
