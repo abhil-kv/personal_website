@@ -14,7 +14,7 @@ const roles = [
       'Built and maintained React Native mobile applications for financial institutions to securely manage customer data.',
       'Contributed to Shopify-based websites using Liquid and jQuery.',
     ],
-    tags: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL'],
+    tags: ['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'HTML5', 'CSS3'],
   },
   {
     number: '02',
@@ -27,7 +27,7 @@ const roles = [
       "Designed and implemented an admin dashboard with responsive design, integrated with the client's SSO-enabled framework.",
       'Leveraged micro frontend architecture with Webpack Module Federation for modular app integration.',
     ],
-    tags: ['JavaScript', 'TypeScript', 'Webpack', 'Node.js'],
+    tags: ['JavaScript', 'TypeScript', 'Webpack', 'Node.js', 'React.js', 'Micro Frontend', 'Webpack', 'HTML5', 'CSS3' ],
   },
 
     {
@@ -42,7 +42,7 @@ const roles = [
       'Improved UI performance and modularity by implementing optimized, reusable components.',
       'Built and maintained RESTful APIs with Express.js and implemented an SSR-based dashboard for improved performance and SEO.',
     ],
-    tags: ['JavaScript', 'TypeScript', 'Go', 'MongoDB', 'PostgreSQL', 'Micro Frontend'],
+    tags: ['JavaScript', 'TypeScript', 'Go', 'MongoDB', 'PostgreSQL', 'Micro Frontend', 'HTML5', 'CSS3', 'Express.js', 'Docker', 'Kubernetes', 'OpenShift', 'React.js', 'Node.js', 'Babel'],
   },
 ];
 
@@ -72,7 +72,7 @@ function RoleCard({
     >
       <motion.div
         style={{ scale }}
-        className="h-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-ink p-4 sm:p-6 md:p-8 flex flex-col gap-6 md:gap-8"
+        className="min-h-full rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-ink p-4 sm:p-6 md:p-8 flex flex-col gap-6 md:gap-8"
       >
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-4 sm:gap-6">

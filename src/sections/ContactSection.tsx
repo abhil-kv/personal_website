@@ -42,8 +42,8 @@ export default function ContactSection() {
       <FadeIn delay={0.2} className="flex flex-col sm:flex-row items-center gap-4">
         <ContactButton label="Email Me" href={`mailto:${SOCIAL_LINKS.email}`} />
         <a
-          href="/Abhil_Vidhyadharan_Resume.docx"
-          download="Abhil_Vidhyadharan_Resume.docx"
+          href="/Abhil_Vidhyadharan_Resume.pdf"
+          download="Abhil_Vidhyadharan_Resume.pdf"
           className="group relative inline-flex items-center gap-2 rounded-full border-2 border-[#D7E2EA] bg-transparent px-8 py-3 font-medium uppercase tracking-widest text-[#D7E2EA] transition-all duration-300 hover:bg-[#D7E2EA] hover:text-[#0A0E27]"
         >
           <Download className="w-4 h-4" strokeWidth={2} />

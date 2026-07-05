@@ -1,4 +1,4 @@
-import { useRef, useState, type MouseEvent } from 'react';
+import { useRef, useState, useEffect, type MouseEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Braces, Boxes, Cloud, GitBranch, Layers, Terminal } from 'lucide-react';
 
@@ -14,6 +14,17 @@ const satellites = [
 export default function OrbitCore() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallScreen(window.innerWidth < 640); // sm breakpoint
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   function handleMouseMove(e: MouseEvent<HTMLDivElement>) {
     const el = wrapRef.current;
@@ -74,7 +85,7 @@ export default function OrbitCore() {
               width: 'clamp(34px, 6vw, 52px)',
               height: 'clamp(34px, 6vw, 52px)',
               transform: `translate(-50%, -50%) translate(${44 + (i % 2) * 0}%, 0) translateX(${
-                140 + (i % 3) * 10
+                (isSmallScreen ? 85 : 140) + (i % 3) * 10
               }px) rotate(${-angle}deg)`,
             }}
           >
