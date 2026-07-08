@@ -2,10 +2,10 @@ import { useState } from 'react';
 import FadeIn from './FadeIn';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '#about', clickable: true },
+  { label: 'Skills', href: '#skills', clickable: true },
+  { label: 'Experience', href: '#experience', clickable: true },
+  { label: 'Contact', href: '#contact', clickable: true },
 ];
 
 export default function Navigation() {
@@ -19,6 +19,23 @@ export default function Navigation() {
     setIsMenuOpen(false);
   };
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+    
+    if (isMenuOpen) {
+      closeMenu();
+    }
+  };
+
   return (
     <>
       <FadeIn as="nav" delay={0} y={-20} className="flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8">
@@ -27,15 +44,25 @@ export default function Navigation() {
 
         {/* Desktop Menu - Right Aligned */}
         <div className="hidden lg:flex gap-8 xl:gap-12">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-lg xl:text-[1.4rem] font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.clickable ? (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                className="text-lg xl:text-[1.4rem] font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <span
+                key={link.label}
+                className="text-lg xl:text-[1.4rem] font-medium uppercase tracking-wider text-[#D7E2EA] cursor-default opacity-50"
+              >
+                {link.label}
+              </span>
+            )
+          )}
         </div>
 
         {/* Hamburger Menu Button - Mobile Only */}
@@ -76,21 +103,35 @@ export default function Navigation() {
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          {navLinks.map((link, index) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={closeMenu}
-              className="text-3xl sm:text-4xl font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70"
-              style={{
-                transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms',
-                opacity: isMenuOpen ? 1 : 0,
-                transform: isMenuOpen ? 'translateY(0)' : 'translateY(-10px)',
-              }}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link, index) =>
+            link.clickable ? (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                className="text-3xl sm:text-4xl font-medium uppercase tracking-wider text-[#D7E2EA] transition-opacity duration-200 hover:opacity-70"
+                style={{
+                  transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms',
+                  opacity: isMenuOpen ? 1 : 0,
+                  transform: isMenuOpen ? 'translateY(0)' : 'translateY(-10px)',
+                }}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <span
+                key={link.label}
+                className="text-3xl sm:text-4xl font-medium uppercase tracking-wider text-[#D7E2EA] cursor-default opacity-50"
+                style={{
+                  transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms',
+                  opacity: isMenuOpen ? 0.5 : 0,
+                  transform: isMenuOpen ? 'translateY(0)' : 'translateY(-10px)',
+                }}
+              >
+                {link.label}
+              </span>
+            )
+          )}
         </div>
       </div>
     </>
